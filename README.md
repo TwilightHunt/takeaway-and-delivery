@@ -22,3 +22,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Template src: https://www.figma.com/file/Rnfpg1C8gEjKfkZEoC9GJL/Takeaway-%26-delivery?node-id=0%3A1
