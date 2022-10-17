@@ -1,26 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <HeaderCommon/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HeaderCommon from './components/header/header-common.vue'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    HeaderCommon
+},
+  data(){
+    return{
+      
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url(https://fonts.googleapis.com/css?family=Inter:regular);
+  *, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+  }
+  body{
+    font-family: Inter;
+  }
+  a{
+      text-decoration: none;
+      color: #000;
+  }
+  ul, ol, li{
+    list-style: none;
+  }
+  [class*='_container']{
+    margin: 0 auto;
+    max-width: 1200px;
+  }
 </style>
