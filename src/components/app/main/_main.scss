@@ -1,0 +1,66 @@
+@use '/src/utils/mixins';
+
+.main-screen{
+    padding: 100px 0 140px 0;
+    background-image: url('@/assets/main/background.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+.main-screen_container{
+    display: flex;
+    align-items: center;
+}
+@keyframes move-right{
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+        transform: translate(-100%, 0);
+    }
+}
+@keyframes move-left{
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+    0%{
+        opacity: 0;
+        transform: translate(100%, 0);
+    }
+}
+.main-screen__content{
+   animation: move-right 1s forwards;
+}
+.main-screen__title{
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: 1.8px;
+    margin: 0 0 27px 0;
+    @include mixins.highlighted-span()
+}
+.main-screen__text{
+    margin: 0 0 57px 0;
+    font-size: 18px;
+    line-height: 134%;
+    letter-spacing: 0.36px;
+    color: #546285;
+    max-width: 540px;
+}
+.main-screen__trustpilot__title{
+    margin: 0 0 6px 0;
+}
+.main-screen__trustpilot__text{
+    font-size: 16px;
+    line-height: 125%;
+    color: #08090A;
+    @include mixins.highlighted-span()
+}
+.main-screen__button{
+    @include mixins.button();
+    margin: 0 0 30px 0;
+}
+.main-screen__image{
+    animation: move-left 1s forwards;
+}

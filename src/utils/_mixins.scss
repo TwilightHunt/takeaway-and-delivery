@@ -1,0 +1,13 @@
+@mixin highlighted-span ($color: #35B8BE){
+    & > span{
+        color: $color;
+    }
+}
+@mixin button(){
+    padding: 20px 35px;
+    background-color: #35B8BE;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 118%;
+}

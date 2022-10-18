@@ -10,57 +10,12 @@
                 <div class="main-screen__trustpilot__text"><span>4.8 out of 5</span> based on 2000+ reviews</div>
             </div>
         </div>
-        <img src="@/assets/main/Frame.jpg" alt="frame" class="main-screen__image">
+        <img src="@/assets/main/Frame.png" alt="frame" class="main-screen__image">
     </div>
 </div>
 </template>
 
-<style>
-.main-screen{
-    padding: 100px 0;
-    background-image: url('@/assets/main/background.jpg');
-}
-.main-screen_container{
-    display: flex;
-    align-items: center;
-}
-.main-screen__title > span{
-    color: #35B8BE;
-}
-.main-screen__title{
-    font-size: 60px;
-    line-height: 100%;
-    letter-spacing: 1.8px;
-    margin: 0 0 27px 0;
-}
-.main-screen__text{
-    margin: 0 0 57px 0;
-    font-size: 18px;
-    line-height: 134%;
-    letter-spacing: 0.36px;
-    color: #546285;
-    max-width: 540px;
-}
-.main-screen__button{
-    margin: 0 0 30px 0;
-}
-.main-screen__trustpilot__title{
-    margin: 0 0 6px 0;
-}
-.main-screen__trustpilot__text{
-    font-size: 16px;
-    line-height: 125%;
-    color: #08090A;
-}
-.main-screen__trustpilot__text > span{
-    color: #35B8BE;
-}
-.main-screen__button{
-    padding: 20px 37px;
-    background-color: #35B8BE;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 17px;
-    line-height: 118%;
-}
-</style>
+<script>
+import './_main.scss'
+export default{}
+</script>
