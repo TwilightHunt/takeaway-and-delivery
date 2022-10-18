@@ -1,14 +1,18 @@
+/* eslint-disable */
 <template>
   <div class="wrapper">
-    <HeaderCommon/>
+    <Header/>
+    <MainScreen/>
   </div>
 </template>
 
 <script>
-import HeaderCommon from './components/header/header-common.vue'
+import Header from './components/app/header/app.header.vue'
+import MainScreen from './components/app/main/app.main.vue'
 export default {
   components: {
-    HeaderCommon
+    Header,
+    MainScreen
 },
   data(){
     return{
@@ -35,6 +39,10 @@ export default {
   }
   ul, ol, li{
     list-style: none;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-weight: inherit;
+    font-size: inherit;
   }
   [class*='_container']{
     margin: 0 auto;
