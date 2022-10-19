@@ -3,10 +3,10 @@
         color: $color;
     }
 }
-@mixin button(){
+@mixin button($bg-color: #35B8BE, $color: #fff){
     padding: 20px 35px;
-    background-color: #35B8BE;
-    color: #fff;
+    background-color: $bg-color;
+    color: $color;
     border-radius: 6px;
     font-size: 17px;
     line-height: 118%;
