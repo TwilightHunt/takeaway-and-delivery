@@ -43,7 +43,7 @@
 export default{
     data(){
         return{
-        counter: 10
+        counter: 0
         }
   }
 }

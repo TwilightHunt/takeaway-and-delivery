@@ -2,9 +2,29 @@
   <div class="wrapper">
     <Header/>
     <MainScreen/>
-    <ContentPage/>
+    <ContentPage :content="{
+      title: 'The home of fresh products', 
+      text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`, 
+      buttonText: 'Learn about us',
+      image: 'https://i.ibb.co/8KmLgw6/content-img.png',
+      background: 'https://i.ibb.co/CP9ppwF/bg.jpg'
+    }"/>
     <InfoPage/>
     <Menu :goods="menu"/>
+    <ContentPage :content="{
+      title: 'Order online with our simple checkout.', 
+      text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`, 
+      buttonText: 'See our FAQ',
+      image: 'https://i.ibb.co/SJ94hQT/cp3.png',
+      reversedOrientation: true
+    }"/>
+    <ContentPage :content="{
+      title: 'Call our store and takeaway when it suits you best.', 
+      text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`, 
+      buttonText: 'Ph. +61 233 2333',
+      image: 'https://i.ibb.co/vXn4ZP9/IMAGE.png',
+      background: 'https://i.ibb.co/CP9ppwF/bg.jpg'
+    }"/>
   </div>
 </template>
 

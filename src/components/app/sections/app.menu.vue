@@ -20,7 +20,7 @@
                         </div>
                         <div class="menu__card__description">{{ good.description }}</div>
                         <div class="menu__card__bottom">
-                            <input type="number" class="menu__card__amount" value="1" min="1">
+                            <input type="number" class="menu__card__amount" value="1" min="1" max="99">
                             <button class="menu__card__button">Add to card</button>
                         </div>
                     </div>

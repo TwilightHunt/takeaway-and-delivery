@@ -25,7 +25,7 @@
 
 <style lang="scss">
 .info-page {
-    padding: 0 0 119px 0;
+    padding: 120px 0;
 }
 .info-page_container {
 
