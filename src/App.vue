@@ -10,7 +10,7 @@
       background: 'https://i.ibb.co/CP9ppwF/bg.jpg'
     }"/>
     <InfoPage/>
-    <Menu :goods="menu"/>
+    <Menu :products="menu.burgers"/>
     <ContentPage :content="{
       title: 'Order online with our simple checkout.', 
       text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`, 

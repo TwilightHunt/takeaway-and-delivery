@@ -27,9 +27,6 @@
 .info-page {
     padding: 120px 0;
 }
-.info-page_container {
-
-}
 .info-page__title {
     text-align: center;
 }
