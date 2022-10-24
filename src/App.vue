@@ -67,4 +67,7 @@ export default {
     letter-spacing: 1.65px;
     color: #35B8BE;
   }
+  button{
+    cursor: pointer;
+  }
 </style>

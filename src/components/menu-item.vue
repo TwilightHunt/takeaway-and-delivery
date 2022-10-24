@@ -9,7 +9,7 @@
             <div class="menu__card__description">{{ product.description }}</div>
             <div class="menu__card__bottom">
                 <input type="number" class="menu__card__amount" min="1" max="99" v-model="amount">
-                <button class="menu__card__button" @click="logAmount">Add to card</button>
+                <button class="menu__card__button" @click="$store.commit({type:'addItem', itemId: product.id, quantity: amount})">Add to card</button>
             </div>
         </div>
     </div>

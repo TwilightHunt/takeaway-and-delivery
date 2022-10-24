@@ -17,6 +17,7 @@
                 />
             </div>
             <button class="menu__order-button">See Full Menu</button>
+            <div>{{ $store.cart }}</div>
         </div>
     </div>
 </template>

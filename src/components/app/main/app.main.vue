@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss">
-@use '/src/utils/mixins';
+@use '@/utils/mixins';
 
 .main-screen{
     padding: 195px 0 140px 0;
@@ -56,7 +56,7 @@
     line-height: 100%;
     letter-spacing: 1.8px;
     margin: 0 0 27px 0;
-    @include mixins.highlighted-span()
+    @include mixins.highlighted-span();
 }
 .main-screen__text{
     margin: 0 0 57px 0;
@@ -73,7 +73,7 @@
     font-size: 16px;
     line-height: 125%;
     color: #08090A;
-    @include mixins.highlighted-span()
+    @include mixins.highlighted-span();
 }
 .main-screen__button{
     @include mixins.button();
