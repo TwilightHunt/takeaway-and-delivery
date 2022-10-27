@@ -27,10 +27,10 @@
                         <a href="" class="main-header__link">Contact</a>
                     </li>
                     <li class="main-header__item">
-                        <div class="main-header__cart">
+                        <button class="main-header__cart" @click="$emit('changeCartVisibility')">
                             <img src="@/assets/header/cart.svg" alt="" class="main-header__cart__image">
                             <div class="main-header__cart__counter"><p>{{ $store.getters.cartLength }}</p></div>
-                        </div>
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -41,7 +41,7 @@
 
 <script>
 export default{
-   
+  
 }
 </script>
 

@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper">
-    <Header/>
+    <Cart 
+    v-if="isCartActive"
+    @changeCartVisibility="changeCartVisibility"/>
+    <Header
+    @changeCartVisibility="changeCartVisibility"/>
     <MainScreen/>
     <ContentPage :content="{
       title: 'The home of fresh products', 
@@ -34,6 +38,7 @@ import MainScreen from './components/app/main/app.main.vue'
 import ContentPage from './components/app/sections/app.content-page.vue'
 import InfoPage from './components/app/sections/app.info-page.vue'
 import Menu from './components/app/sections/app.menu.vue'
+import Cart from './components/app/popups/app.cart.vue'
 import './base/_nullstyle.scss'
 import { MENU } from './constants/menu'
 export default {
@@ -42,11 +47,19 @@ export default {
     MainScreen,
     ContentPage,
     InfoPage,
-    Menu
+    Menu,
+    Cart
   },
   data(){
     return {
-      menu: MENU
+      menu: MENU,
+      isCartActive: false
+    }
+  }, 
+  methods: {
+    changeCartVisibility(){
+      this.isCartActive = !this.isCartActive
+      document.body.classList.toggle('fixedBody')
     }
   }
 }
@@ -57,6 +70,9 @@ export default {
   [class*='_container']{
     margin: 0 auto;
     max-width: 1200px;
+  }
+  .fixedBody{
+    overflow: hidden;
   }
   body{
     font-family: Inter;
