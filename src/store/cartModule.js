@@ -9,10 +9,16 @@ export const cartModule = {
     },
     mutations: {
         addItem(state, {item, quantity}){
-            state.cart.push({
-                item,
-                quantity
-              })
+            if(state.cart.filter(i => i.item !== item)){
+                state.cart.push({
+                    key: item.id,
+                    item,
+                    quantity
+                })
+            }
+        }, 
+        removeItem(state, itemId) {
+            state.cart = state.cart.filter(x => x.key !== itemId);
         }
     }
 }

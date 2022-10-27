@@ -9,7 +9,9 @@
             <div class="menu__card__description">{{ product.description }}</div>
             <div class="menu__card__bottom">
                 <input type="number" class="menu__card__amount" min="1" v-model.number="amount" @input="checkAmount" maxlength="2" minlength="1">
-                <button class="menu__card__button" @click="$store.commit({type:'addItem', item: product, quantity: amount})">Add to card</button>
+                <button 
+                class="menu__card__button" 
+                @click="clickButton">{{buttonActive ? "Remove from card" : "Add to card"}}</button>
             </div>
         </div>
     </div>
@@ -20,7 +22,9 @@
 export default {
     data(){
         return{
-            amount: 1
+            amount: 1,
+            buttonText: 'Remove from Card',
+            buttonActive: false
         }
     },
     props: {
@@ -28,11 +32,23 @@ export default {
             type: Object,
             required: true
         }
+    }, 
+    methods: {
+        clickButton(event){
+            this.buttonActive = !this.buttonActive;
+            event.target.classList.toggle('_active')
+            if(!this.buttonActive){
+                this.$store.commit('removeItem', this.product.id)
+                console.log(this.product.id)
+            } else {
+                this.$store.commit('addItem', { item: this.product, quantity: this.amount })
+            }            
+        }
     }
 }
 </script>
 
-<style>
+<style lang="scss">
 .menu__card {
     padding: 40px 26px;
     background-color: #fff;
@@ -93,5 +109,10 @@ export default {
     font-size: 16px;
     line-height: 169%;
     letter-spacing: 0.36px;
+    &._active{
+        background-color: #fff;
+        color: #35B8BE;
+        border: 1px solid #35B8BE;
+    }
 }
 </style>
