@@ -23,7 +23,6 @@ export default {
     data(){
         return{
             amount: 1,
-            buttonText: 'Remove from Card',
             buttonActive: false
         }
     },
@@ -37,11 +36,10 @@ export default {
         clickButton(event){
             this.buttonActive = !this.buttonActive;
             event.target.classList.toggle('_active')
-            if(!this.buttonActive){
-                this.$store.commit('removeItem', this.product.id)
-                console.log(this.product.id)
-            } else {
+            if(this.buttonActive){          
                 this.$store.commit('addItem', { item: this.product, quantity: this.amount })
+            } else {
+                this.$store.commit('removeItem', this.product.id)
             }            
         }
     }
