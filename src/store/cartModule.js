@@ -2,10 +2,15 @@ export const cartModule = {
     state: () => ({
         cart: []
     }),
+    getters: {
+        cartLength(state){
+            return state.cart.length;
+        }
+    },
     mutations: {
-        addItem(state, {itemId, quantity}){
+        addItem(state, {item, quantity}){
             state.cart.push({
-                itemId,
+                item,
                 quantity
               })
         }

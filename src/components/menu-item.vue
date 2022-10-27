@@ -8,14 +8,15 @@
             </div>
             <div class="menu__card__description">{{ product.description }}</div>
             <div class="menu__card__bottom">
-                <input type="number" class="menu__card__amount" min="1" max="99" v-model="amount">
-                <button class="menu__card__button" @click="$store.commit({type:'addItem', itemId: product.id, quantity: amount})">Add to card</button>
+                <input type="number" class="menu__card__amount" min="1" v-model.number="amount" @input="checkAmount" maxlength="2" minlength="1">
+                <button class="menu__card__button" @click="$store.commit({type:'addItem', item: product, quantity: amount})">Add to card</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+
 export default {
     data(){
         return{
@@ -26,11 +27,6 @@ export default {
         product: {
             type: Object,
             required: true
-        }
-    },
-    methods: {
-        logAmount(){
-            console.log(this.amount)
         }
     }
 }

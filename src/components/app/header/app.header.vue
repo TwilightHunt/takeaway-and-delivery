@@ -29,7 +29,7 @@
                     <li class="main-header__item">
                         <div class="main-header__cart">
                             <img src="@/assets/header/cart.svg" alt="" class="main-header__cart__image">
-                            <div class="main-header__cart__counter"><p>{{ counter }}</p></div>
+                            <div class="main-header__cart__counter"><p>{{ $store.getters.cartLength }}</p></div>
                         </div>
                     </li>
                 </ul>
@@ -45,6 +45,9 @@ export default{
         return{
         counter: 0
         }
+  }, 
+  computed: {
+    
   }
 }
 </script>
