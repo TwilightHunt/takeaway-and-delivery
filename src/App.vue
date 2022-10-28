@@ -14,7 +14,7 @@
       background: 'https://i.ibb.co/CP9ppwF/bg.jpg'
     }"/>
     <InfoPage/>
-    <Menu :products="menu.burgers"/>
+    <Menu :products="menu"/>
     <ContentPage :content="{
       title: 'Order online with our simple checkout.', 
       text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.`, 
@@ -38,9 +38,8 @@ import MainScreen from './components/app/main/app.main.vue'
 import ContentPage from './components/app/sections/app.content-page.vue'
 import InfoPage from './components/app/sections/app.info-page.vue'
 import Menu from './components/app/sections/app.menu.vue'
-import Cart from './components/app/popups/app.cart.vue'
+import Cart from './components/app/popups/cart/app.cart.vue'
 import './base/_nullstyle.scss'
-import { MENU } from './constants/menu'
 export default {
   components: {
     Header,
@@ -52,7 +51,7 @@ export default {
   },
   data(){
     return {
-      menu: MENU,
+      menu: this.$store.getters.getBurgers,
       isCartActive: false
     }
   }, 

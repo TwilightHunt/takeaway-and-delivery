@@ -2,17 +2,21 @@
     <div>
         <div class="cart">
             <div class="cart__body">
-                <h3 class="cart__title">Cart</h3>
+                <h3 class="cart__title" @click="log">Cart</h3>
                 <div class="close" @click="$emit('changeCartVisibility')"></div>
-                <!-- <div class="cart__items" v-for="item in $store.state.cart">
-                    <div>{{ item.key }}</div>
-                </div> -->
+                <div class="cart__items" v-if="$store.getters.cartLength > 0" >
+                    <CartItem
+                    v-for="item in cartItems.cart"
+                    :cartItem="item"
+                    />
+                </div>
+                <div class="message" v-else>Your cart is empty</div>
                 <div class="cart__summary">
                     <div class="cart__price-line"> 
                         <p>Price:</p>
                         <p>12 $</p>
                     </div>
-                    <button class="cart__button">Заказать</button>
+                    <button class="cart__button">Order</button>
                 </div>
             </div>
         </div>
@@ -20,11 +24,31 @@
 </template>
 
 <script>
-
+import CartItem from './app.cart-item.vue'
+import { mapState } from 'vuex';
+export default {
+    components: {
+        CartItem
+    },
+    computed: 
+        mapState({
+          cartItems: "cart"  
+        }), 
+}
 </script>
 
 <style lang="scss">
 @use '@/utils/mixins';
+@keyframes appear {
+    0% {
+        margin: 350px 500px;
+        opacity: 0.5;
+    }
+    100% {
+        margin: 70px 100px;
+        opacity: 1;
+    }
+}
 .cart{
     position: fixed;
     z-index: 15;
@@ -37,6 +61,7 @@
     background-color: #fff;
     padding: 40px 60px;
     position: relative;
+    animation: appear 0.2s forwards;
 }
 .cart__title {
     font-size: 60px;

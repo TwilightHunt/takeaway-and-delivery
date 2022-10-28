@@ -8,7 +8,7 @@
             </div>
             <div class="menu__card__description">{{ product.description }}</div>
             <div class="menu__card__bottom">
-                <input type="number" class="menu__card__amount" min="1" v-model.number="amount" @input="checkAmount" maxlength="2" minlength="1">
+                <input type="number" class="menu__card__amount" v-model.number="amount" @input="checkAmount" max="99" min="1">
                 <button 
                 class="menu__card__button" 
                 @click="clickButton">{{buttonActive ? "Remove from card" : "Add to card"}}</button>
