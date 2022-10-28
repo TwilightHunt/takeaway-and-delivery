@@ -1,23 +1,33 @@
 <template>
     <div class="cart__item">    
         <div class="cart__item__info">
-            <img :src="cartItem.item.image" alt="" class="cart__item__image">
+            <img :src="cartItem.image" alt="" class="cart__item__image">
             <div>
-                <h5 class="cart__item__title">{{cartItem.item.title}}</h5>
-                <div class="cart__item__decription">{{cartItem.item.description}}</div>   
+                <h5 class="cart__item__title">{{cartItem.title}}</h5>
+                <div class="cart__item__decription">{{cartItem.description}}</div>   
             </div>    
         </div>
-        <input type="number" class="cart__item__quantity" max="99" min="1" :value="cartItem.quantity">
-        <div class="cart__item__price">$ {{ cartItem.item.price * cartItem.quantity}} USD</div>
+        <input type="number" class="cart__item__quantity" max="99" min="1" :value="cartItem.quantity" @change="changeQuantity($event)">
+        <div class="cart__item__price">$ {{ price = (cartItem.price * cartItem.quantity).toPrecision(4) }} USD</div>
     </div>
 </template>
 
 <script>
 export default {
+    data(){
+        return {
+            price: 0
+        }
+    },
     props: {
         cartItem: {
             type: Object,
             required: true
+        }
+    }, 
+    methods: {
+        changeQuantity(e){
+            this.$store.commit('changeQuantity', {itemId: this.cartItem.key, newValue: e.target.value})
         }
     }
 }
@@ -60,6 +70,7 @@ export default {
     background: #FAFAFA;
     border: 1px solid #DDDDDD;
     border-radius: 6px;
+    justify-self: flex-start;
 }
 .cart__item__price {
 }

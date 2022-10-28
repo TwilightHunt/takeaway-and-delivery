@@ -14,7 +14,7 @@
                 <div class="cart__summary">
                     <div class="cart__price-line"> 
                         <p>Price:</p>
-                        <p>12 $</p>
+                        <p>$ {{ $store.getters.getSum }} USD </p>
                     </div>
                     <button class="cart__button">Order</button>
                 </div>
@@ -27,6 +27,11 @@
 import CartItem from './app.cart-item.vue'
 import { mapState } from 'vuex';
 export default {
+    data(){
+        return {
+            sum: 0
+        }
+    },
     components: {
         CartItem
     },
