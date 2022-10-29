@@ -17,7 +17,7 @@
                 max="99" min="1">
                 <button 
                 class="menu__card__button" 
-                @click="clickButton">{{buttonActive ? "Remove from card" : "Add to card"}}</button>
+                @click="clickButton">{{buttonActive ? "Remove from cart" : "Add to cart"}}</button>
             </div>
         </div>
     </div>

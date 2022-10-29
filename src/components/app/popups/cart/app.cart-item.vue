@@ -35,9 +35,9 @@ export default {
 
 <style>
 .cart__item {
-    display: flex;
+    display: grid;
     padding: 20px 5px;
-    justify-content: space-between;
+    grid-template-columns: 3fr 1fr 1fr;
 }
 .cart__item__image {
     margin-right: 30px;
@@ -70,8 +70,9 @@ export default {
     background: #FAFAFA;
     border: 1px solid #DDDDDD;
     border-radius: 6px;
-    justify-self: flex-start;
+    justify-self: center;
 }
 .cart__item__price {
+    text-align: right;
 }
 </style>
