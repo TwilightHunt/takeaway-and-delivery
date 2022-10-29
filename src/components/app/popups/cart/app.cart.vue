@@ -2,7 +2,7 @@
     <div>
         <div class="cart">
             <div class="cart__body">
-                <h3 class="cart__title" @click="log">Cart</h3>
+                <h3 class="cart__title">Cart</h3>
                 <div class="close" @click="$emit('changeCartVisibility')"></div>
                 <div class="cart__items" v-if="$store.getters.cartLength > 0" >
                     <CartItem
@@ -10,7 +10,7 @@
                     :cartItem="item"
                     />
                 </div>
-                <div class="message" v-else>Your cart is empty</div>
+                <div class="message" v-else>Your cart is empty. <span @click="$emit('changeCartVisibility')">Start shopping</span></div>
                 <div class="cart__summary">
                     <div class="cart__price-line"> 
                         <p>Price:</p>
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '@/utils/mixins';
 @keyframes appear {
     0% {
@@ -76,6 +76,8 @@ export default {
     margin-bottom: 20px;
 }
 .cart__items {
+    max-height: 55vh;
+    overflow-y: auto;
 }
 .cart__summary {
     display: flex;
@@ -93,33 +95,21 @@ export default {
     right: 0;
     align-self: flex-end;
 }
-.close {
-	position: absolute;
-	top: 50px;
-	right: 70px;
-	width: 40px;
-	height: 40px;
-	opacity: 0.2;
-	cursor: pointer;
-    transition: opacity ease 0.5s;
-	&:hover {
-		opacity: 1;
-	}
+.message{
+    margin: 25vh auto;
+    text-align: center;
+    font-size: 30px;
+    span{
+        text-decoration: underline;
+        color: #35B8BE;
+        &:hover {
+            cursor: pointer
+        }
+    }
 }
-.close::before,
-.close::after {
-	content: '';
-	position: absolute;
-	top: 50%;
-	display: block;
-	width: 40px;
-	height: 3px;
-	background: #000;
-}
-.close::before {
-	transform: rotate(45deg);
-}
-.close::after {
-	transform: rotate(-45deg);
+.close{
+    @include mixins.cross(40px, 3px);
+    top: 50px;
+    right: 70px;
 }
 </style>

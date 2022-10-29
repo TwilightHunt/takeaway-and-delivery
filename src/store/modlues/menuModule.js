@@ -8,6 +8,7 @@ export const menuModule = {
               image: "https://i.ibb.co/kKsj1FP/dreams.jpg",
               description:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              inCart: false
             },
             {
               id: 2,
@@ -16,6 +17,7 @@ export const menuModule = {
               image: "https://i.ibb.co/KFr4Gjz/waldo.jpg",
               description:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              inCart: false
             },
             {
               id: 3,
@@ -24,6 +26,7 @@ export const menuModule = {
               image: "https://i.ibb.co/0XYp67P/cali.jpg",
               description:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              inCart: false
             },
             {
               id: 4,
@@ -32,6 +35,7 @@ export const menuModule = {
               image: "https://i.ibb.co/hCKVZM6/bacon-buddy.jpg",
               description:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              inCart: false
             },
             {
               id: 5,
@@ -40,6 +44,7 @@ export const menuModule = {
               image: "https://i.ibb.co/z7n6bsN/spicy.jpg",
               description:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              inCart: false
             },
             {
               id: 6,
@@ -48,6 +53,7 @@ export const menuModule = {
               image: "https://i.ibb.co/qjwLbsB/classic.jpg",
               description:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+              inCart: false
             },
           ],
           sides: [],

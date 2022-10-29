@@ -17,7 +17,8 @@
                 max="99" min="1">
                 <button 
                 class="menu__card__button" 
-                @click="clickButton">{{buttonActive ? "Remove from cart" : "Add to cart"}}</button>
+                :class="product.inCart ? '_active' : ' ' "
+                @click="clickButton">{{product.inCart ? "Remove from cart" : "Add to cart"}}</button>
             </div>
         </div>
     </div>
@@ -29,7 +30,6 @@ export default {
     data(){
         return{
             amount: 1,
-            buttonActive: false
         }
     },
     props: {
@@ -40,17 +40,16 @@ export default {
     }, 
     methods: {
         clickButton(event){
-            this.buttonActive = !this.buttonActive;
+            this.product.inCart = !this.product.inCart;
             event.target.classList.toggle('_active')
-            if(this.buttonActive){          
+            if(this.product.inCart){          
                 this.$store.commit('addItem', { item: this.product, quantity: this.amount })
             } else {
                 this.$store.commit('removeItem', this.product.id)
             }            
         },
         changeQuantity(e){
-            if(this.buttonActive) { this.$store.commit('changeQuantity', {itemId: this.product.id, newValue: e.target.value}) }
-            
+            if(this.product.inCart) { this.$store.commit('changeQuantity', {itemId: this.product.id, newValue: e.target.value}) }  
         }
     }
 }

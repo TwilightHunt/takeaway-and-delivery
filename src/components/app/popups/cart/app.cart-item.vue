@@ -8,8 +8,15 @@
             </div>    
         </div>
         <input type="number" class="cart__item__quantity" max="99" min="1" :value="cartItem.quantity" @change="changeQuantity($event)">
-        <div class="cart__item__price">$ {{ price = (cartItem.price * cartItem.quantity).toPrecision(4) }} USD</div>
+        <div class="right">
+            <div class="cart__item__price">$ {{ price = (cartItem.price * cartItem.quantity).toPrecision(4) }} USD</div>
+            <p href="" class="cart__item__delete"  @click="removeItem">
+                <font-awesome-icon icon="fa-xmark"/>
+                Delete              
+            </p>
+        </div>
     </div>
+    
 </template>
 
 <script>
@@ -28,12 +35,16 @@ export default {
     methods: {
         changeQuantity(e){
             this.$store.commit('changeQuantity', {itemId: this.cartItem.key, newValue: e.target.value})
+        }, removeItem() {
+            this.$store.commit('removeItem', this.cartItem.key);
+            this.$store.getters.getBurgers.find(x => x.id === this.cartItem.key).inCart = false;
         }
     }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@use '@/utils/mixins';
 .cart__item {
     display: grid;
     padding: 20px 5px;
@@ -55,7 +66,7 @@ export default {
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.32px;
-    color: #546285;
+    color: #a0a4a8;
     text-align: left;
 }
 .cart__item__quantity {
@@ -74,5 +85,21 @@ export default {
 }
 .cart__item__price {
     text-align: right;
+}
+.cart__item__delete{
+    text-align: right;
+    align-self: end;
+    margin-bottom: 30px;
+    color: #a0a4a8;
+    &:hover{
+        color: #d1150e;
+        cursor: pointer;
+    }
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
 }
 </style>

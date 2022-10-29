@@ -11,3 +11,30 @@
     font-size: 17px;
     line-height: 118%;
 }
+@mixin cross($size, $height, $opacity: 0.2, $background: #000){
+    position: absolute;
+	width: $size;
+	height: $size;
+	opacity: $opacity;
+	cursor: pointer;
+    transition: opacity ease 0.5s;
+	&:hover {
+		opacity: 1;
+	}
+    &.close::before,
+    &.close::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: $size;
+        height: $height;
+        background: $background;
+    }
+    &.close::before {
+        transform: rotate(45deg);
+    }
+    &.close::after {
+        transform: rotate(-45deg);
+    }
+}
