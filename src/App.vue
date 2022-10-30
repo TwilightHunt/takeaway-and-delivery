@@ -37,7 +37,7 @@ import Header from './components/app/header/app.header.vue'
 import MainScreen from './components/app/main/app.main.vue'
 import ContentPage from './components/app/sections/app.content-page.vue'
 import InfoPage from './components/app/sections/app.info-page.vue'
-import Menu from './components/app/sections/app.menu.vue'
+import Menu from './components/app/sections/menu/app.menu.vue'
 import Cart from './components/app/popups/cart/app.cart.vue'
 import './base/_nullstyle.scss'
 export default {
@@ -72,6 +72,9 @@ export default {
   }
   .fixedBody{
     overflow: hidden;
+  }
+  html{
+    scroll-behavior: smooth;
   }
   body{
     font-family: Inter;

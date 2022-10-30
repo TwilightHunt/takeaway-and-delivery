@@ -10,7 +10,7 @@
                     :cartItem="item"
                     />
                 </div>
-                <div class="message" v-else>Your cart is empty. <span @click="$emit('changeCartVisibility')">Start shopping</span></div>
+                <div class="message" v-else>Your cart is empty. <a href="#menu" @click="$emit('changeCartVisibility')">Start shopping</a></div>
                 <div class="cart__summary">
                     <div class="cart__price-line"> 
                         <p>Price:</p>
@@ -99,7 +99,7 @@ export default {
     margin: 25vh auto;
     text-align: center;
     font-size: 30px;
-    span{
+    a{
         text-decoration: underline;
         color: #35B8BE;
         &:hover {

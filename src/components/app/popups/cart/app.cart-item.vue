@@ -45,10 +45,24 @@ export default {
 
 <style lang="scss" scoped>
 @use '@/utils/mixins';
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .cart__item {
     display: grid;
     padding: 20px 5px;
     grid-template-columns: 3fr 1fr 1fr;
+    &:hover{
+        & .cart__item__delete{
+            animation: appear 0.2s forwards;
+            display: block;
+        }
+    }
 }
 .cart__item__image {
     margin-right: 30px;
@@ -87,10 +101,12 @@ export default {
     text-align: right;
 }
 .cart__item__delete{
+    display: none;
     text-align: right;
     align-self: end;
     margin-bottom: 30px;
     color: #a0a4a8;
+    transition: color 0.3s;
     &:hover{
         color: #d1150e;
         cursor: pointer;

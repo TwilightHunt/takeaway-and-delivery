@@ -1,5 +1,5 @@
 <template>
-    <div class="menu">
+    <div class="menu" id="menu">
         <div class="menu_container">
             <div class="menu__head">
                 <h2 class="menu__title">Browse our menu</h2>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import MenuItem from '/src/components/menu-item.vue';
+import MenuItem from './menu-item.vue';
 export default{
     props: {
         products: {
