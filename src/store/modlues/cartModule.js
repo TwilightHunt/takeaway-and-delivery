@@ -12,6 +12,9 @@ export const cartModule = {
                 sum += item.price * item.quantity;
             });
             return sum.toPrecision(4);
+        },
+        getQuantity: (state) => (itemId) => {
+                return state.cart.find(x => x.key === itemId).quantity;
         }
     },
     mutations: {

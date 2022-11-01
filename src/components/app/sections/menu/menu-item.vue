@@ -11,8 +11,7 @@
                 <input 
                 type="number" 
                 class="menu__card__amount" 
-                v-model.number="amount" 
-                @input="checkAmount" 
+                :value="Amount" 
                 @change="changeQuantity($event)"
                 max="99" min="1">
                 <button 
@@ -49,8 +48,16 @@ export default {
             }            
         },
         changeQuantity(e){
+            this.amount = e.target.value
             if(this.product.inCart) { this.$store.commit('changeQuantity', {itemId: this.product.id, newValue: e.target.value}) }  
         }
+    },
+    computed: {
+        Amount() {
+            console.log(this.product.id)
+            return this.product.inCart ? this.$store.getters.getQuantity(this.product.id) : this.amount
+        }
+        
     }
 }
 </script>
