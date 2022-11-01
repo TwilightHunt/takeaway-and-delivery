@@ -1,5 +1,5 @@
 <template>
-    <div class="content-page" :style="{backgroundImage: `url(${content.background})`}">
+    <div class="content-page" ref="observer" :style="{backgroundImage: `url(${content.background})`}">
         <div :class="['content-page_container', content.reversedOrientation ? '_reversed-orientation' : null]">
             <div class="content-page__content">
                 <h2 class="content-page__content__title">{{ content.title }}</h2>
@@ -23,6 +23,23 @@ export default {
             background: String,
             required: true
         }
+    },
+    mounted(){
+        
+        let options = {
+            rootMargin: '5px',
+            threshold: 0.5
+        }
+        let callback = function(entries, observer){
+            if(entries[0].isIntersecting) {
+                entries[0].target.classList.add('show')
+            } else {
+                entries[0].target.classList.remove('show')
+            }
+        }
+
+        let observer = new IntersectionObserver(callback, options)
+        observer.observe(this.$refs.observer)
     }
 }
 </script>
@@ -35,6 +52,17 @@ export default {
     background-image: url('/src/assets/content-page/bg.jpg');
     background-size: cover;
     background-position: top;
+    transition: all 1s;
+    &.show{
+        & .content-page__content{
+            opacity: 1;
+            transform: translateX(0);
+        }
+        & .content-page__image{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 }
 .content-page_container {
     display: flex;
@@ -48,6 +76,16 @@ export default {
 .content-page__content__title {
     margin: 0 0 29px 0;
     max-width: 373px;
+}
+.content-page__content{
+    transition: all 1s;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.content-page__image{
+    transition: all 1s;
+    transform: translateX(50%);
+    opacity: 0;
 }
 .content-page__content__text {
     font-size: 18px;

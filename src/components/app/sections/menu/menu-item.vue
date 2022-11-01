@@ -62,6 +62,14 @@ export default {
     display: flex;
     border: 1px solid rgba(53, 184, 190, 0.15);
     border-radius: 6px;
+    opacity: 0;
+    transition: all 1s;
+    &:nth-child(odd){
+        transform: translateX(-50%);
+    }
+    &:nth-child(even){
+        transform: translateX(50%);
+    }
 }
 .menu__card__image {
     margin: 0 30px 0 0;

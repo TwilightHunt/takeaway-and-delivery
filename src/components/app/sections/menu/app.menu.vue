@@ -10,7 +10,7 @@
                     <button class="menu__button">Drinks</button>
                 </div>
             </div>
-            <div class="menu__body">
+            <div class="menu__body" ref="observer">
                 <MenuItem 
                 v-for="product in products"
                 :product="product"
@@ -33,6 +33,23 @@ export default{
     }, 
     components: {
         MenuItem
+    },
+    mounted(){
+        
+        let options = {
+            rootMargin: '5px',
+            threshold: 0.5
+        }
+        let callback = function(entries, observer){
+            if(entries[0].isIntersecting) {
+                entries[0].target.classList.add('show')
+            } else {
+                entries[0].target.classList.remove('show')
+            }
+        }
+
+        let observer = new IntersectionObserver(callback, options)
+        observer.observe(this.$refs.observer)
     }
 }
 </script>
@@ -84,5 +101,11 @@ export default{
     grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
     gap: 20px;
     margin: 40px 10px 20px 10px;
+    &.show{
+        .menu__card{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 }
 </style>
