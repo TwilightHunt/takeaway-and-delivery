@@ -25,8 +25,8 @@
 
 <script>
 export default{
+    name: 'InfoPage',
     mounted(){
-        
         let options = {
             rootMargin: '5px',
             threshold: 0.5

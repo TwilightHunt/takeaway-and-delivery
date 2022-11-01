@@ -13,6 +13,7 @@
 
 <script>
 export default {
+    name: 'ContentPage',
     props: {
         content: {
             title: String,

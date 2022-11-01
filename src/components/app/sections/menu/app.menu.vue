@@ -25,6 +25,7 @@
 <script>
 import MenuItem from './menu-item.vue';
 export default{
+    name: 'Menu',
     props: {
         products: {
             type: Array,
