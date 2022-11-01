@@ -33,8 +33,12 @@
 </template>
 
 <script>
+import Cart from './components/app/popups/cart/app.cart.vue'
 import './base/_nullstyle.scss'
 export default {
+  components: {
+    Cart
+  },
   data(){
     return {
       menu: this.$store.getters.getBurgers,
