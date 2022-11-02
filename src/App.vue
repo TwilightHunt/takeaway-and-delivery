@@ -29,6 +29,8 @@
       image: 'https://i.ibb.co/vXn4ZP9/IMAGE.png',
       background: 'https://i.ibb.co/CP9ppwF/bg.jpg'
     }"/>
+    <CardSection/>
+    <Footer/>
   </div>
 </template>
 
@@ -65,6 +67,7 @@ export default {
   }
   html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body{
     font-family: Inter;

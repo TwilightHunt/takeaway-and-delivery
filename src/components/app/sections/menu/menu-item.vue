@@ -54,10 +54,8 @@ export default {
     },
     computed: {
         Amount() {
-            console.log(this.product.id)
             return this.product.inCart ? this.$store.getters.getQuantity(this.product.id) : this.amount
         }
-        
     }
 }
 </script>
