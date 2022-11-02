@@ -47,7 +47,12 @@ export default {
 
 <style lang="scss">
 @use '/src//utils/mixins';
-
+h2{
+    font-size: 3.125rem;
+    line-height: 110%;
+    letter-spacing: 1.65px;
+    color: #35B8BE;
+}
 .content-page {
     padding: 50px 0 230px 0;
     background-image: url('/src/assets/content-page/bg.jpg');
@@ -68,10 +73,15 @@ export default {
 .content-page_container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
     align-items: center;
-    &._reversed-orientation > .content-page__content {
-        order: 2;
-        justify-content: flex-start;
+    row-gap: 30px;
+    &._reversed-orientation{
+        flex-wrap: wrap;
+        & > .content-page__content {
+            order: 2;
+            justify-content: flex-start;
+        }
     }
 }
 .content-page__content__title {
@@ -89,7 +99,7 @@ export default {
     opacity: 0;
 }
 .content-page__content__text {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 150%;
     letter-spacing: 0.36px;
     color: #546285;

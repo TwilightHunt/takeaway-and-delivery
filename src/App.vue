@@ -36,6 +36,7 @@
 
 <script>
 import Cart from './components/app/popups/cart/app.cart.vue'
+import './utils/media.css'
 import './base/_nullstyle.scss'
 export default {
   components: {
@@ -63,20 +64,15 @@ export default {
     max-width: 1200px;
   }
   .fixedBody{
-    overflow: hidden;
+    overflow-y: hidden;
   }
   html{
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
   body{
     font-family: Inter;
-  }
-  h2{
-    font-size: 50px;
-    line-height: 110%;
-    letter-spacing: 1.65px;
-    color: #35B8BE;
+    overflow-x: hidden;
+    font-size: 14px;
   }
   button{
     cursor: pointer;

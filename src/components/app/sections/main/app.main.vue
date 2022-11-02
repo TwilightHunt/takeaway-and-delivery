@@ -58,7 +58,7 @@ export default {
    animation: move-right 1s forwards;
 }
 .main-screen__title{
-    font-size: 60px;
+    font-size: 3.75rem;
     line-height: 100%;
     letter-spacing: 1.8px;
     margin: 0 0 27px 0;
@@ -66,7 +66,7 @@ export default {
 }
 .main-screen__text{
     margin: 0 0 57px 0;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 134%;
     letter-spacing: 0.36px;
     color: #546285;
@@ -76,7 +76,7 @@ export default {
     margin: 0 0 6px 0;
 }
 .main-screen__trustpilot__text{
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 125%;
     color: #08090A;
     @include mixins.highlighted-span();

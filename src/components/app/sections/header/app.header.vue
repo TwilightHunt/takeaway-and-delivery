@@ -55,13 +55,11 @@ export default{
     justify-content: center;
 }
 .header-top__text{
-    font-size: 14px;
     line-height: 143%;
     color: rgba(255, 255, 255, 0.8);
     padding-right: 18px;
 }
 .header-top__link{
-    font-size: 14px;
     line-height: 143%;
     color: #fff;
 }

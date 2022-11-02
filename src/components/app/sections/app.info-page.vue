@@ -80,13 +80,13 @@ export default{
 }
 .info-page__item__title {
     margin: 0 0 15px 0;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 110%;
     letter-spacing: 0.66px;
     color: #08090A;
 }
 .info-page__item__text {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 150%;
     letter-spacing: 0.36px;
     color: #546285;

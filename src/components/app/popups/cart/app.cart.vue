@@ -76,8 +76,9 @@ export default {
     margin-bottom: 20px;
 }
 .cart__items {
-    max-height: 55vh;
+    height: 0.7em;
     overflow-y: auto;
+    min-height: 500px;
 }
 .cart__summary {
     display: flex;
@@ -96,9 +97,11 @@ export default {
     align-self: flex-end;
 }
 .message{
-    margin: 25vh auto;
+    min-height: 500px;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875rem;
+    margin: auto;
+    padding: 200px;
     a{
         text-decoration: underline;
         color: #35B8BE;

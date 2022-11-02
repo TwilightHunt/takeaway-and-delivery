@@ -90,18 +90,18 @@ export default {
     justify-content: space-between;
 }
 .menu__card__name {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 111%;
     letter-spacing: 0.6px;
     color: #08090A;
 }
 .menu__card__price {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 133%;
     color: #35B8BE;
 }
 .menu__card__description {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 150%;
     letter-spacing: 0.32px;
     color: #546285;
@@ -112,7 +112,7 @@ export default {
 }
 .menu__card__amount {
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 169%;
     letter-spacing: 0.36px;
     text-align: center;
@@ -126,7 +126,7 @@ export default {
     padding: 10px;
     background-color: #35B8BE;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 169%;
     letter-spacing: 0.36px;
     &._active{

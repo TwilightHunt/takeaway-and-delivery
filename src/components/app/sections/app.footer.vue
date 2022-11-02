@@ -65,7 +65,7 @@ export default{
     margin-bottom: 25px;
 }
 .top-footer__text {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 180%;
     letter-spacing: 0.36px;
     color: #546285;
@@ -77,14 +77,14 @@ export default{
     column-gap: 16px;
 }
 .top-footer__nav__title {
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 154%;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #08090A;
 }
 .top-footer__nav__link {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 133%;
     color: #546285;
     
@@ -100,7 +100,7 @@ export default{
     padding: 60px 0;
 }
 .footer__credits {
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 133%;
     color: #353448;
     span {

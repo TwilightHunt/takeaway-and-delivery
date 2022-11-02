@@ -70,7 +70,7 @@ export default{
     margin: 0 0 26px 0;
 }
 .menu__text {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 169%;
     letter-spacing: 0.36px;
     color: #546285;
@@ -78,7 +78,7 @@ export default{
     @include mixins.highlighted-span();
 }
 .menu__button {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 143%; 
     padding: 16px 46px;
     background-color: rgba(#000, 0);
